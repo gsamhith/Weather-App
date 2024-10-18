@@ -1,0 +1,15 @@
+<%- include ("partials/header.ejs") %>
+    <div class="main">
+        <form action="/search" method="post" id="search">
+            <input type="text" name="cityName" id="cityName" placeholder="Enter City Name">
+            <button type="submit" class="btn">Go</button>
+        </form>
+    </div>
+    <div class="otp">
+        <div class="result">
+            <h1 class="optemp">The temperature in <%= query%> is <%= temp %>℃</h1>
+            <p class="opdesc">The weather is currently <%= description %></p>
+            <img class="opimg" src="http://openweathermap.org/img/w/<%= icon%>.png" width=100>
+        </div>
+    </div>
+<%- include ("partials/footer.ejs") %>

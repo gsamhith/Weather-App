@@ -1,0 +1,13 @@
+<%- include ("partials/header.ejs") %>
+    <div class="main">
+        <form action="/search" method="post" id="search">
+            <input type="text" name="cityName" id="cityName" placeholder="Enter City Name">
+            <button type="submit" class="btn">Go</button>
+        </form>
+    </div>
+    <div class="otp">
+        <div class="result">
+            <h2>Enter City name to Know the temperature</h2>
+            <p><%=new Date() %></p>
+    </div>
+<%- include ("partials/footer.ejs") %>
