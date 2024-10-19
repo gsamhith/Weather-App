@@ -1,6 +1,8 @@
 import bodyParser from "body-parser";
 import express from "express";
 import https from "https";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -17,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.post("/search", (req, res) => {
     const query = req.body.cityName;
-    const apiKey = 'your api key';
+    const apiKey = process.env.API_KEY;
     const url = 'https://api.openweathermap.org/data/2.5/weather?q='+ query +'&appid='+ apiKey +'&units=metric';
     https.get(url, (response) => {
         console.log('statusCode:', response.statusCode);
